@@ -10,16 +10,17 @@
 <body ng-app="photo-upload">
     <h2>Image uploader</h2>
     <div ng-controller="uploadCtrl">
-        <form>
+        <form action="uploadPhoto()" enctype="multipart/form-data" method="post">
             <div class="img-card">
                 <img class="responsive" ng-src="{{uploadRes.url}}" alt="uploaded image">
             </div>
             <pre>
             {{uploadRes}}
         </pre>
-            <input type="file" accept="image/*" ng-change="getFile(e)" ng-model="file">
-            <button type="button" ng-click="uploadPhoto()">Click here to upload...</button>
+            <input type="file" accept="image/*" name="logo" ng-change="$scope.getFile(e)" ng-model="file">
+            <button type="submit">Click here to upload...</button>
             <hr>
+            <!-- https://www.cs.tut.fi/~jkorpela/forms/file.html -->
             <i ng-if="uploading" class="fa fa-spinner spnr" aria-hidden="true"></i>
         </form>
     </div>
