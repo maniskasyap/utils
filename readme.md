@@ -1,0 +1,1 @@
+small utils for reuse.
