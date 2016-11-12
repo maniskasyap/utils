@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image uploader</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-app="photo-upload">
+    <h2>Image uploader</h2>
+    <div ng-controller="uploadCtrl">
+        <!-- <div class="">
+            <img ng-src="" alt="uploaded image">
+        </div> -->
+        <pre>
+        	{{uploadRes}}
+        </pre>
+        <button type="button" ng-click="uploadPhoto()">Click here to upload...</button>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
