@@ -4,6 +4,7 @@
   "description": "simple utility to upload images at cloudinary",
   "main": "app.js",
   "scripts": {
+    "sass": "sass --watch style.scss:style.css",
     "start": "nodemon server.js"
   },
   "author": "",

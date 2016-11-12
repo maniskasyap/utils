@@ -4,6 +4,7 @@
 <head>
     <title>Image uploader</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
 </head>
 
 <body ng-app="photo-upload">
@@ -13,10 +14,13 @@
             <img ng-src="" alt="uploaded image">
         </div> -->
         <pre>
-        	{{uploadRes}}
+            {{uploadRes}}
         </pre>
         <button type="button" ng-click="uploadPhoto()">Click here to upload...</button>
+        <hr>
+        <i ng-if="uploading" class="fa fa-spinner spnr" aria-hidden="true"></i>
     </div>
+    <span></span>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
 </body>
