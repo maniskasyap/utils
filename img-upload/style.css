@@ -1,8 +1,20 @@
+body {
+  font-size: 14px !important; }
+
 .spnr {
   animation: spin 2s linear infinite; }
 
 @keyframes spin {
   to {
     transform: rotate(360deg); } }
+.img-card {
+  height: 15em;
+  width: 15em;
+  border-radius: 2px;
+  background-color: #DCD0D0; }
+  .img-card > .responsive {
+    max-width: 100%;
+    height: auto;
+    display: block; }
 
 /*# sourceMappingURL=style.css.map */

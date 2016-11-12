@@ -10,17 +10,19 @@
 <body ng-app="photo-upload">
     <h2>Image uploader</h2>
     <div ng-controller="uploadCtrl">
-        <!-- <div class="">
-            <img ng-src="" alt="uploaded image">
-        </div> -->
-        <pre>
+        <form>
+            <div class="img-card">
+                <img class="responsive" ng-src="{{uploadRes.url}}" alt="uploaded image">
+            </div>
+            <pre>
             {{uploadRes}}
         </pre>
-        <button type="button" ng-click="uploadPhoto()">Click here to upload...</button>
-        <hr>
-        <i ng-if="uploading" class="fa fa-spinner spnr" aria-hidden="true"></i>
+            <input type="file" accept="image/*" ng-change="getFile(e)" ng-model="file">
+            <button type="button" ng-click="uploadPhoto()">Click here to upload...</button>
+            <hr>
+            <i ng-if="uploading" class="fa fa-spinner spnr" aria-hidden="true"></i>
+        </form>
     </div>
-    <span></span>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
 </body>
