@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.8",
-    "body-parser": "^1.15.2",
     "cloudinary": "^1.4.4",
     "express": "^4.14.0",
     "nodemon": "^1.11.0"

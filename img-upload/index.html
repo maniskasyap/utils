@@ -10,17 +10,34 @@
 <body ng-app="photo-upload">
     <h2>Image uploader</h2>
     <div ng-controller="uploadCtrl">
-        <div class="img-card">
-            <img class="responsive" ng-src="{{uploadRes.url}}" alt="uploaded image">
-        </div>
-        <pre>
+        <form action="uploadPhoto()" enctype="multipart/form-data" method="post">
+            <div class="img-card">
+                <img class="responsive" ng-src="{{uploadRes.url}}" alt="uploaded image">
+            </div>
+            <div class="row">
+                <div class="col-xs-10">
+                    <input type="text" name="rsLogo" class="form-control input-sm col-xs-10" id="rsLogo" ng-model="survey.requiredSetting.company_logo_url" disabled>
+                    <i class="fa fa-spin fa-spinner fa-2x uploading" ng-if="survey.requiredSetting.uploading"></i>
+                </div>
+                <div class="col-xs-4">
+                    <div class="card">
+                        <img class="img-responsive" ng-if="survey.requiredSetting.company_logo_url" ng-src="{{survey.requiredSetting.company_logo_url}}" alt="company logo" />
+                    </div>
+                </div>
+                <div class="col-xs-2" ng-disabled="!survey.project_id">
+                    <input type="file" name="file" id="file" class="inputfile" accept="image/*" onchange="angular.element(this).scope().uploadLogo(this.files, angular.element(this).scope())" />
+                    <label class="btn btn-primary" for="file">Browse...</label>
+                </div>
+            </div>
+            <pre>
             {{uploadRes}}
-            </pre>
-        <input type="file" accept="image/*" name="logo" multiple ng-files="getTheFiles($files)">
-        <button ng-click="uploadPhoto()">Click here to upload...</button>
-        <hr>
-        <!-- https://www.cs.tut.fi/~jkorpela/forms/file.html -->
-        <i ng-if="uploading" class="fa fa-spinner spnr" aria-hidden="true"></i>
+        </pre>
+            <input type="file" accept="image/*" name="logo" ng-change="$scope.getFile(e)" ng-model="file">
+            <button type="submit">Click here to upload...</button>
+            <hr>
+            <!-- https://www.cs.tut.fi/~jkorpela/forms/file.html -->
+            <i ng-if="uploading" class="fa fa-spinner spnr" aria-hidden="true"></i>
+        </form>
     </div>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
