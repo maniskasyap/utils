@@ -14,21 +14,6 @@
             <div class="img-card">
                 <img class="responsive" ng-src="{{uploadRes.url}}" alt="uploaded image">
             </div>
-            <div class="row">
-                <div class="col-xs-10">
-                    <input type="text" name="rsLogo" class="form-control input-sm col-xs-10" id="rsLogo" ng-model="survey.requiredSetting.company_logo_url" disabled>
-                    <i class="fa fa-spin fa-spinner fa-2x uploading" ng-if="survey.requiredSetting.uploading"></i>
-                </div>
-                <div class="col-xs-4">
-                    <div class="card">
-                        <img class="img-responsive" ng-if="survey.requiredSetting.company_logo_url" ng-src="{{survey.requiredSetting.company_logo_url}}" alt="company logo" />
-                    </div>
-                </div>
-                <div class="col-xs-2" ng-disabled="!survey.project_id">
-                    <input type="file" name="file" id="file" class="inputfile" accept="image/*" onchange="angular.element(this).scope().uploadLogo(this.files, angular.element(this).scope())" />
-                    <label class="btn btn-primary" for="file">Browse...</label>
-                </div>
-            </div>
             <pre>
             {{uploadRes}}
         </pre>
